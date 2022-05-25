@@ -1,0 +1,45 @@
+.color {
+  border: solid black 1px;
+  padding: 30px;
+  display: inline-block;
+
+}
+
+.yellow{
+  background-color: black;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: yellow;
+}
+
+.red {
+  background-color: red;
+}
+
+.white {
+  background-color: white;
+}
+
+.pixel {
+  border: solid black 1px;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  background-color: white;
+
+}
+
+.pixelsLine {
+
+}
+
+
+
+#pixel-board {
+  max-width: 210px;
+}
