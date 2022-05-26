@@ -5,6 +5,16 @@
 
 }
 
+
+.pixel {
+  border: solid black 1px;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  background-color: white;
+}
+
+
 #black{
   background-color: black;
 }
@@ -19,27 +29,4 @@
 
 #red {
   background-color: red;
-}
-
-.white {
-  background-color: white;
-}
-
-.pixel {
-  border: solid black 1px;
-  height: 40px;
-  width: 40px;
-  display: inline-block;
-  background-color: white;
-
-}
-
-.pixelsLine {
-
-}
-
-
-
-#pixel-board {
-
 }

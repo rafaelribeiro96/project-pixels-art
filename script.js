@@ -27,19 +27,40 @@ createPixelBoard(lineNumbers, columnsNumbers);
 
 // requisito 7
 
-
 document.querySelectorAll('.color').forEach((item) => {
   item.addEventListener('click', (recebeClick) => {
-    const pixelSquare = recebeClick;
+    const pixelPalette = recebeClick;
     const pixel = document.getElementsByClassName('color');
-    /* pixelSquare.classList.remove('selected'); */
-
+    
     for (let index = 0; index < pixel.length; index += 1) {
       if (pixel[index].className === 'color selected') {
         pixel[index].className = 'color';
       }
     }
     
-    pixelSquare.target.className += ' selected';
+    pixelPalette.target.className += ' selected';
   });
 });
+
+// requisito 8
+
+document.querySelectorAll('.pixel').forEach((item) => {
+  item.addEventListener('click', (recebeClick) => {
+    let pixelSquare = recebeClick.target;
+    const colorPixel = document.getElementsByClassName('selected')[0];
+    const propertyColorPixel = window.getComputedStyle(colorPixel, null);
+    let bgColor = propertyColorPixel.getPropertyValue("background-color");
+    pixelSquare.style.backgroundColor = bgColor;
+  });
+});
+
+// requisito 9
+
+const clearBoard = document.getElementById('clear-board')
+
+clearBoard.addEventListener('click', () => {
+  const pixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
+  }
+}); 
