@@ -1,9 +1,8 @@
+//requisito 4 e 5
 const tamanhoTabelaPixels = 5;
 const lineNumbers = tamanhoTabelaPixels;
 const columnsNumbers = tamanhoTabelaPixels;
 const pixelsSquare = document.body.querySelector('#pixel-board');
-const pixelsSunSquare = pixelsSquare;
-
 
 function createPixelBoard(lineNumbersF, columnsNumbersF) {
   for (let index = 0; index < lineNumbersF; index += 1) {
@@ -25,3 +24,22 @@ function createPixelBoard(lineNumbersF, columnsNumbersF) {
 }
 
 createPixelBoard(lineNumbers, columnsNumbers);
+
+// requisito 7
+
+
+document.querySelectorAll('.color').forEach((item) => {
+  item.addEventListener('click', (recebeClick) => {
+    const pixelSquare = recebeClick;
+    const pixel = document.getElementsByClassName('color');
+    /* pixelSquare.classList.remove('selected'); */
+
+    for (let index = 0; index < pixel.length; index += 1) {
+      if (pixel[index].className === 'color selected') {
+        pixel[index].className = 'color';
+      }
+    }
+    
+    pixelSquare.target.className += ' selected';
+  });
+});

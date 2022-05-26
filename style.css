@@ -5,19 +5,19 @@
 
 }
 
-.yellow{
+#black{
   background-color: black;
 }
 
-.blue {
+#blue {
   background-color: blue;
 }
 
-.green {
+#yellow {
   background-color: yellow;
 }
 
-.red {
+#red {
   background-color: red;
 }
 
@@ -41,5 +41,5 @@
 
 
 #pixel-board {
-  max-width: 210px;
+
 }
