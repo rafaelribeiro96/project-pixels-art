@@ -1,13 +1,14 @@
 //requisito 4 e 5
-const tamanhoTabelaPixels = 5;
-const lineNumbers = tamanhoTabelaPixels;
-const columnsNumbers = tamanhoTabelaPixels;
+
+let tamanhoTabelaPixels = 5;
 const pixelsSquare = document.body.querySelector('#pixel-board');
 
 function createPixelBoard(lineNumbersF, columnsNumbersF) {
+  /* const removePixels = document.getElementsByClassName('pixelsLine');
+  removePixels.parentNode.removeChild(removePixels); */
   for (let index = 0; index < lineNumbersF; index += 1) {
     const pixelsLineDiv = document.createElement('div');
-    pixelsLineDiv.className = 'pixelsLine'
+    pixelsLineDiv.className = 'pixelsLine';
     pixelsSquare.appendChild(pixelsLineDiv);
   }
 
@@ -16,6 +17,7 @@ function createPixelBoard(lineNumbersF, columnsNumbersF) {
   for (let index = 0; index < lineNumbersF; index += 1) {
     
     for (let index = 0; index < columnsNumbersF; index += 1) {
+      
       let pixelsColumnsDiv = document.createElement('div');
       pixelsColumnsDiv.className = 'pixel';
       pixelsLLine[index].appendChild(pixelsColumnsDiv);
@@ -23,7 +25,7 @@ function createPixelBoard(lineNumbersF, columnsNumbersF) {
   }
 }
 
-createPixelBoard(lineNumbers, columnsNumbers);
+createPixelBoard(tamanhoTabelaPixels, tamanhoTabelaPixels);
 
 // requisito 7
 
@@ -64,3 +66,41 @@ clearBoard.addEventListener('click', () => {
     pixel[index].style.backgroundColor = 'white';
   }
 }); 
+
+
+// funcao deletar
+function deletePreviousBoard() {
+  const pixelTable = document.getElementsByClassName('pixelsLine')[0];
+  while (pixelTable.firstChild) {
+    pixelTable.removeChild(pixelTable.firstChild);
+  }
+}
+
+// requisito 10
+
+
+
+const buttonNumber = document.getElementById('generate-board');
+buttonNumber.addEventListener('click', () => {
+  const qntPixels = document.getElementById('board-size').value;
+  //console.log(qntPixels);
+  if (qntPixels < 5) {
+    alert('Valor incorreto, o número deve estar entre 5 e 50');
+    tamanhoTabelaPixels = 5;    
+    deletePreviousBoard();
+    createPixelBoard(tamanhoTabelaPixels, tamanhoTabelaPixels);
+  } else if (qntPixels > 50) {
+    alert('Valor incorreto, o número deve estar entre 5 e 50');
+    tamanhoTabelaPixels = 50;    
+    deletePreviousBoard();
+    createPixelBoard(tamanhoTabelaPixels, tamanhoTabelaPixels);
+  } else {
+    tamanhoTabelaPixels = parseInt(qntPixels);
+    deletePreviousBoard();
+    createPixelBoard(tamanhoTabelaPixels, tamanhoTabelaPixels);
+    //tamanhoTabelaPixels = qntPixels;
+  }
+});
+
+console.log(tamanhoTabelaPixels);
+

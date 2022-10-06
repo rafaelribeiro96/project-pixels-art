@@ -1,19 +1,29 @@
+body {
+  text-align: center;
+  background: url(pixelartgame.png) center center no-repeat fixed; 
+  background-size: cover;
+}
+
 .color {
   border: solid black 1px;
-  padding: 30px;
+  height: 70px;
+  width: 70px;
   display: inline-block;
 
 }
-
 
 .pixel {
   border: solid black 1px;
-  height: 40px;
-  width: 40px;
+  height: 10px;
+  width: 10px;
   display: inline-block;
   background-color: white;
+  
 }
 
+#pixel-board {
+  line-height: 0;
+}
 
 #black{
   background-color: black;
@@ -30,3 +40,9 @@
 #red {
   background-color: red;
 }
+
+.inlineBlock {
+  display: inline-block;
+  padding: 10px;
+}
+
