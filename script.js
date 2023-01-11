@@ -62,6 +62,9 @@ document.querySelectorAll('.color').forEach((item) => {
       if (pixel[index].className === 'color selected') {
         pixel[index].className = 'color';
       }
+      if (pixel[index].className === 'color2 color selected') {
+        pixel[index].className = 'color2 color';
+      }
     }
 
     pixelPalette.target.className += ' selected';
