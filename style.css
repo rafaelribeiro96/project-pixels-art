@@ -1,10 +1,18 @@
 body {
   text-align: center;
-  background: url(pixelartgame.png) center center no-repeat fixed; 
+  background: url(pixelartgame.png) center center no-repeat fixed;
   background-size: cover;
 }
 
 .color {
+  border: solid black 1px;
+  height: 70px;
+  width: 70px;
+  display: inline-block;
+
+}
+
+.color2 {
   border: solid black 1px;
   height: 70px;
   width: 70px;
@@ -18,14 +26,14 @@ body {
   width: 10px;
   display: inline-block;
   background-color: white;
-  
+
 }
 
 #pixel-board {
   line-height: 0;
 }
 
-#black{
+#black {
   background-color: black;
 }
 
@@ -39,6 +47,22 @@ body {
 
 #red {
   background-color: red;
+}
+
+#green {
+  background-color: green;
+}
+
+#brown {
+  background-color: rgb(153, 77, 77);
+}
+
+#pink {
+  background-color: rgb(255, 67, 239);
+}
+
+#white {
+  background-color: white;
 }
 
 .inlineBlock {
